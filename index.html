@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>index</title>
+        <meta name="description" content="">
+        <meta name="author" content="hsidhu">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </head>
+
+    <body>
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #eee;
+        }
+        body {
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+        .form-signin, .local-storage {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+    </style>
+
+            <div class="container">
+
+                <form class="form-signin" role="form" id="store_locally">
+                    <h2 class="form-signin-heading">Local Storage and Rating stars</h2>
+
+                    <label class="sr-only" for="fname">First Name:</label>
+                    <input type="text" class="form-control" name="First_name" placeholder="First Name" required>
+
+                    <label class="sr-only" for="lname" >Last Name:</label>
+                    <input type="text" class="form-control" name="Last_name" placeholder="Last Name"  required>
+
+                    <label class="sr-only" for='Rstar'>Rating Number</label>
+                    <input type="text" id="rating_stars" class="form-control" name="Rating_star" value="0"/>
+
+                    <button onclick="serialize_form_data()" class="btn btn-lg btn-primary btn-block">
+                       Submit
+                    </button>
+
+                </form>
+
+                <div class="local-storage">
+                	<ul class="storage-items">
+                	</ul>
+                    <button onclick="remove_local_data('form_data')" class="btn btn-lg btn-primary btn-block">
+                        Remove Local data
+                    </button>
+                </div>
+
+            </div>
+
+            <footer>
+                <p>
+                    &copy; Copyright  by hsidhu
+                </p>
+            </footer>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+        <script type="text/javascript" src="js/localstorage.js"></script>
+
+        <script type="text/javascript" src="js/rating-plugin.js"></script>
+        <script type="text/javascript">
+			$('input#rating_stars').RatingStars({rate:8});
+        </script>
+    </body>
+</html>
